@@ -1,2 +1,3 @@
-driver/WebdriverManager.class
-tests/BaseTest.class
+herokuapp_tests/Base.class
+herokuapp_tests/LoginTests.class
+herokuapp_tests/AppointmentTests.class

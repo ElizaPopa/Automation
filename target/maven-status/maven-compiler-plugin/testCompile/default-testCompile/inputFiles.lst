@@ -1,2 +1,3 @@
-/Users/mr.lee/IdeaProjects/TemaCap7Selenium/src/test/java/driver/WebdriverManager.java
-/Users/mr.lee/IdeaProjects/TemaCap7Selenium/src/test/java/tests/BaseTest.java
+/Users/mr.lee/IdeaProjects/TemaCap7Selenium/src/test/java/herokuapp_tests/AppointmentTests.java
+/Users/mr.lee/IdeaProjects/TemaCap7Selenium/src/test/java/herokuapp_tests/LoginTests.java
+/Users/mr.lee/IdeaProjects/TemaCap7Selenium/src/test/java/herokuapp_tests/Base.java

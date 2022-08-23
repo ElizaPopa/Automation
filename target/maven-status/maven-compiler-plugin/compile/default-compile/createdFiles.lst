@@ -1,1 +1,4 @@
-org/example/Main.class
+pages/AppointmentPage.class
+pages/LoginPage.class
+implementation/WebdriverManager.class
+pages/BasePage.class
