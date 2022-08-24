@@ -15,25 +15,20 @@ public class AppointmentPage extends LoginPage {
 
     @FindBy(id = "btn-make-appointment")
     private WebElement makeAppointmentButton;
-
     @FindBy(id = "chk_hospotal_readmission")
     private WebElement applyForHospitalReadmissionCheckBox;
-
     @FindBy(id = "txt_visit_date")
     private WebElement selectDateButton;
-
     @FindBy(id = "txt_comment")
     private WebElement commentField;
-
     @FindBy(id = "btn-book-appointment")
     private WebElement bookAppointmentButton;
-
     @FindBy(className = "lead")
     private WebElement appointmentConfirmation;
-
-    @FindBy(css = "btn.btn-default")
+    @FindBy(css = ".btn.btn-default")
     private WebElement goToHomePageButton;
-
+    @FindBy(id = "txt_visit_date")
+    private WebElement dateRequired;
     public AppointmentPage(WebDriver driver) {
         super(driver);
     }
@@ -46,13 +41,10 @@ public class AppointmentPage extends LoginPage {
         Select facility = new Select(driver.findElement(By.id("combo_facility")));
         facility.selectByIndex(1);
         applyForHospitalReadmissionCheckBox.isSelected();
-        Thread.sleep(2000);
         applyForHospitalReadmissionCheckBox.click();
         List<WebElement> healthcareProgram = driver.findElements(By.className("radio-inline"));
-        Thread.sleep(2000);
         healthcareProgram.get(2).click();
         selectDateButton.click();
-        Thread.sleep(2000);
         selectDateButton.sendKeys("10/09/2022");
         Thread.sleep(2000);
         commentField.click();
@@ -61,12 +53,9 @@ public class AppointmentPage extends LoginPage {
     }
     public void makeAnAppointment() throws InterruptedException {
         bookAppointmentButton.click();
-        Thread.sleep(2000);
         System.out.println(appointmentConfirmation.getText());
-        goToHomePageButton.click();
     }
-
-    public void failedAppointment() throws InterruptedException {
+    public void insertingLetersInDateField() throws InterruptedException {
 
         makeAppointmentButton.click();
         username.sendKeys("John Doe");
@@ -75,11 +64,19 @@ public class AppointmentPage extends LoginPage {
         Select facility = new Select(driver.findElement(By.id("combo_facility")));
         facility.selectByIndex(2);
         List<WebElement> healthcareProgram = driver.findElements(By.className("radio-inline"));
-        Thread.sleep(2000);
         healthcareProgram.get(1).click();
+        dateRequired.click();
+        dateRequired.sendKeys("Litere in campul Data");
+        commentField.click();
+        commentField.sendKeys("Nu se pot introduce litere in campul Data");
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy ");
+        if (dateRequired != dateFormat) {
+            System.out.println("Nu se pot introduce litere in campul Visit Date");
+        } else {
+            System.out.println("Test negativ esuat");
+        }
+        Thread.sleep(2000);
         bookAppointmentButton.click();
-        Alert alert = driver.switchTo().alert();
-        System.out.println(alert.getText());
         Thread.sleep(2000);
     }
 }

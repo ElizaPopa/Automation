@@ -6,7 +6,6 @@ import org.testng.annotations.*;
 
 public class LoginTests extends BaseTest {
 
-
     @Test
     public void validLogin() {
 
@@ -15,6 +14,7 @@ public class LoginTests extends BaseTest {
         Assert.assertTrue(driver.getCurrentUrl().contains("#appointment"),
                 "The user was not redirected to the appointment page");
     }
+
     @Test
     public void invalidLogin() {
 
@@ -22,7 +22,6 @@ public class LoginTests extends BaseTest {
         loginPage.loginWithInvalidCredentials();
         Assert.assertEquals(driver.findElement(By.cssSelector(".lead.text-danger")).getText(),
                 "Login failed! Please ensure the username and password are valid.");
-
     }
 }
 

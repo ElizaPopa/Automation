@@ -24,9 +24,9 @@ public class AppointmentTests extends BaseTest {
     }
 
     @Test
-    public void AppointmentFailed() throws InterruptedException {
+    public void NegativeScenario() throws InterruptedException {
         driver.get(baseURL);
-        appointmentPage.failedAppointment();
+        appointmentPage.insertingLetersInDateField();
     }
 }
 

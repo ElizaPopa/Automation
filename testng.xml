@@ -3,12 +3,10 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="/Users/mr.lee/IdeaProjects/TemaCap7Selenium/src/test/java/herokuapp_tests.java">
         <classes>
-        <class name="herokuapp_tests.LoginTests">
-            <methods>
-                <include name="validLogin"/>
-                <include name="invalidLogin"/>
-            </methods>
-        </class>
+        <class name="herokuapp_tests.AppointmentTests"></class>
+            <class name="herokuapp_tests.BaseTest"></class>
+            <class name="herokuapp_tests.HomeButtonTests"></class>
+            <class name="herokuapp_tests.LoginTests"></class>
         </classes>
     </test>
 </suite>
