@@ -9,18 +9,18 @@ import org.openqa.selenium.support.FindBy;
 public class LoginPage extends BasePage {
 
     @FindBy(id = "menu-toggle")
-    private WebElement menuButton;
+    public WebElement menuButton;
 
     @FindBy(css = "a[href='profile.php#login")
     private WebElement loginButtonFromMenu;
     @FindBy(id = "txt-username")
-    private WebElement username;
+    public WebElement username;
 
     @FindBy(id = "txt-password")
-    private WebElement password;
+    public WebElement password;
 
     @FindBy(id = "btn-login")
-    private WebElement loginButton;
+    public WebElement loginButton;
 
     @FindBy(css = ".lead.text-danger")
     private WebElement loginMessage;
@@ -30,6 +30,7 @@ public class LoginPage extends BasePage {
     }
 
     public void loginWithValidCredentials() {
+
         menuButton.click();
         loginButtonFromMenu.click();
         username.sendKeys("John Doe");
