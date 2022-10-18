@@ -20,7 +20,7 @@ public class HomeButtonTests extends BaseTest {
         driver.get(baseURL);
         loginPage.loginWithValidCredentials();
         Thread.sleep(2000);
-        homeButtonPage.logoutButton();
+        homeButtonPage.logOutButton();
         Thread.sleep(2000);
     }
 }

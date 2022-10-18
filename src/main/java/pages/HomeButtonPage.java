@@ -12,11 +12,14 @@ public class HomeButtonPage extends LoginPage {
     @FindBy(css = "a[href='authenticate.php?logout']")
     private WebElement logoutButton;
     public HomeButtonPage(WebDriver driver) { super(driver); }
+
     public void homePage() {
+
         menuButton.click();
         homeButtonFromAppointmentPage.click();
     }
-    public void logoutButton() throws InterruptedException {
+
+    public void logOutButton() throws InterruptedException {
         menuButton.click();
         logoutButton.click();
         menuButton.click();

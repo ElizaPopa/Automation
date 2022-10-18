@@ -34,6 +34,7 @@ public class AppointmentPage extends LoginPage {
     }
 
     public void completeTheDetailsForAppointment() throws InterruptedException {
+
         makeAppointmentButton.click();
         username.sendKeys("John Doe");
         password.sendKeys("ThisIsNotAPassword");
