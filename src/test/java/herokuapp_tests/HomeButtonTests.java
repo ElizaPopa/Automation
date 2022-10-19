@@ -1,7 +1,6 @@
 package herokuapp_tests;
 
 import org.testng.annotations.Test;
-import pages.HomeButtonPage;
 
 public class HomeButtonTests extends BaseTest {
     String baseURL = "https://katalon-demo-cura.herokuapp.com/";

@@ -2,6 +2,8 @@ package herokuapp_tests;
 
 import implementation.WebdriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -20,8 +22,8 @@ public class BaseTest {
     BasicAjaxPage basicAjaxPage;
 //    Screenshot screenshot;
     ButtonsPage buttonsPage;
-
     String urlDemoQA = "https://demoqa.com/";
+    String urlHerokuApp = "https://katalon-demo-cura.herokuapp.com/";
 
     @BeforeMethod
     public void loginSteps() {
@@ -34,20 +36,14 @@ public class BaseTest {
         redirectPage = new RedirectPage(driver);
         refreshPage = new RefreshPage(driver);
         buttonsPage = new ButtonsPage(driver);
-//        driver.get("https://katalon-demo-cura.herokuapp.com/");
 //        screenshot = new Screenshot(driver);
     }
 
     @AfterMethod(alwaysRun = true)
-    public void quitThePage(ITestResult result) {
-
-//        String testName = result.getName();
-//        String screenshotFileName = "screenshots/" + testName + ".png";
-//        if(result.getStatus() == ITestResult.FAILURE){
-//            screenshot.saveScreenshot(screenshotFileName);
-//        }
-        driver.quit();
-        System.out.println("Test passed successfully");
+    public void quitThePage() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
 

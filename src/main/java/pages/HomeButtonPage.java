@@ -2,7 +2,6 @@ package pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.bidi.log.Log;
 import org.openqa.selenium.support.FindBy;
 
 public class HomeButtonPage extends LoginPage {
@@ -14,7 +13,6 @@ public class HomeButtonPage extends LoginPage {
     public HomeButtonPage(WebDriver driver) { super(driver); }
 
     public void homePage() {
-
         menuButton.click();
         homeButtonFromAppointmentPage.click();
     }

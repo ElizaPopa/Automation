@@ -1,13 +1,9 @@
 package pages;
 
-
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import java.io.File;
-import java.util.Properties;
-
 
 public class LoginPage extends BasePage {
 
@@ -21,19 +17,16 @@ public class LoginPage extends BasePage {
     public WebElement password;
     @FindBy(id = "btn-login")
     public WebElement loginButton;
-    @FindBy(css = ".lead.text-danger")
-    private WebElement loginMessage;
 
 
     public LoginPage(WebDriver driver) {
         super(driver);
     }
 
-
     public void loginWithValidCredentials() {
         menuButton.click();
         loginButtonFromMenu.click();
-        username.sendKeys("config/config.property");
+        username.sendKeys("John Doe");
         password.sendKeys("ThisIsNotAPassword");
         loginButton.click();
     }
