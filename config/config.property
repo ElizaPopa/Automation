@@ -1,0 +1,7 @@
+urlDemoHerokuApp = https://katalon-demo-cura.herokuapp.com/
+usernameValid = John Doe
+usernameInvalid = John
+passwordValid = ThisIsNotAPassword
+passwordInvalid = aplauze
+screenshotsFolder = screenshots/
+urlHerokuAppBasicAjax = https://testpages.herokuapp.com/styled/basic-ajax-test.html
