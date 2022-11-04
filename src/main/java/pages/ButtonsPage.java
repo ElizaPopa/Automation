@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 
 public class ButtonsPage extends BasePage {
@@ -25,9 +24,7 @@ public class ButtonsPage extends BasePage {
     public WebElement getButtonMessage() {
         return buttonMessage;
     }
-
     public String urlButtons = "https://testpages.herokuapp.com/styled/dynamic-buttons-simple.html";
-
     public ButtonsPage(WebDriver driver) { super(driver); }
 
     public void fourButtons() {

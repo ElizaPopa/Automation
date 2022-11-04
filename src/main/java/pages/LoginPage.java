@@ -1,26 +1,36 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage {
 
-    @FindBy(id = "menu-toggle")
-    public WebElement menuButton;
-    @FindBy(css = "a[href='profile.php#login")
+    @FindBy(css = "a[id='menu-toggle']")
+    private WebElement menuButton;
+    @FindBy(xpath = "//a[normalize-space()='Login']")
     private WebElement loginButtonFromMenu;
     @FindBy(id = "txt-username")
-    public WebElement username;
+    private WebElement username;
     @FindBy(id = "txt-password")
-    public WebElement password;
+    private WebElement password;
     @FindBy(id = "btn-login")
-    public WebElement loginButton;
-
-
+    private WebElement loginButton;
     public LoginPage(WebDriver driver) {
         super(driver);
+    }
+
+    public WebElement getMenuButton() {
+        return menuButton;
+    }
+    public WebElement getUsername() {
+        return username;
+    }
+    public WebElement getPassword() {
+        return password;
+    }
+    public WebElement getLoginButton() {
+        return loginButton;
     }
 
     public void loginWithValidCredentials() {
@@ -32,7 +42,6 @@ public class LoginPage extends BasePage {
     }
 
     public void loginWithInvalidCredentials() {
-
         menuButton.click();
         loginButtonFromMenu.click();
         username.sendKeys("Eliza Popa");

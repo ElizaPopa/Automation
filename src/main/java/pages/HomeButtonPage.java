@@ -13,14 +13,14 @@ public class HomeButtonPage extends LoginPage {
     public HomeButtonPage(WebDriver driver) { super(driver); }
 
     public void homePage() {
-        menuButton.click();
+        getMenuButton().click();
         homeButtonFromAppointmentPage.click();
     }
 
     public void logOutButton() throws InterruptedException {
-        menuButton.click();
+        getMenuButton().click();
         logoutButton.click();
-        menuButton.click();
+        getMenuButton().click();
         Thread.sleep(2000);
         homeButtonFromAppointmentPage.click();
         Thread.sleep(2000);

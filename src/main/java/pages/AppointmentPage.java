@@ -30,11 +30,10 @@ public class AppointmentPage extends LoginPage {
     }
 
     public void completeTheDetailsForAppointment() throws InterruptedException {
-
         makeAppointmentButton.click();
-        username.sendKeys("John Doe");
-        password.sendKeys("ThisIsNotAPassword");
-        loginButton.click();
+        getUsername().sendKeys("John Doe");
+        getPassword().sendKeys("ThisIsNotAPassword");
+        getLoginButton().click();
         Select facility = new Select(driver.findElement(By.id("combo_facility")));
         facility.selectByIndex(1);
         applyForHospitalReadmissionCheckBox.isSelected();
@@ -48,16 +47,17 @@ public class AppointmentPage extends LoginPage {
         commentField.clear();
         commentField.sendKeys("Programare - ora 07:00");
     }
+
     public void makeAnAppointment() throws InterruptedException {
         bookAppointmentButton.click();
         System.out.println(appointmentConfirmation.getText());
     }
-    public void insertingLetersInDateField() throws InterruptedException {
 
+    public void insertingLetersInDateField() throws InterruptedException {
         makeAppointmentButton.click();
-        username.sendKeys("John Doe");
-        password.sendKeys("ThisIsNotAPassword");
-        loginButton.click();
+        getUsername().sendKeys("John Doe");
+        getPassword().sendKeys("ThisIsNotAPassword");
+        getLoginButton().click();
         Select facility = new Select(driver.findElement(By.id("combo_facility")));
         facility.selectByIndex(2);
         List<WebElement> healthcareProgram = driver.findElements(By.className("radio-inline"));
