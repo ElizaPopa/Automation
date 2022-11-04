@@ -1,14 +1,13 @@
 package herokuapp_tests;
 
+import implementation.Screenshot;
 import implementation.WebdriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pages.*;
 
+import java.net.MalformedURLException;
 
 public class BaseTest {
 
@@ -20,15 +19,15 @@ public class BaseTest {
     String configPath;
     RefreshPage refreshPage;
     BasicAjaxPage basicAjaxPage;
-//    Screenshot screenshot;
+    Screenshot screenshot;
     ButtonsPage buttonsPage;
     String urlDemoQA = "https://demoqa.com/";
     String urlHerokuApp = "https://katalon-demo-cura.herokuapp.com/";
+    String baseURLHeroku = "https://katalon-demo-cura.herokuapp.com/";
 
     @BeforeMethod
-    public void loginSteps() {
-
-        driver = WebdriverManager.getChromedriver();
+    public void loginSteps() throws MalformedURLException {
+        driver = WebdriverManager.getRemoteWebDriver();
         loginPage = new LoginPage(driver);
         appointmentPage = new AppointmentPage(driver);
         homeButtonPage = new HomeButtonPage(driver);
@@ -36,7 +35,7 @@ public class BaseTest {
         redirectPage = new RedirectPage(driver);
         refreshPage = new RefreshPage(driver);
         buttonsPage = new ButtonsPage(driver);
-//        screenshot = new Screenshot(driver);
+        screenshot = new Screenshot(driver);
     }
 
     @AfterMethod(alwaysRun = true)

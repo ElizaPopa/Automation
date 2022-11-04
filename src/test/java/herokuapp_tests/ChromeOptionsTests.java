@@ -5,13 +5,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-
 public class ChromeOptionsTests extends BaseTest {
-    String urlBasicAjax = "https://testpages.herokuapp.com/styled/the_form_processor.php?ajax=1";
 
     @Test
     public void mobileTest() {
-        ChromeDriver driver = WebdriverManager.getChromeDriverWithOptions();
+        ChromeDriver driver = WebdriverManager.getChromeDriverWithOptionsForMobile();
         driver.get(urlDemoQA);
         driver.quit();
     }
