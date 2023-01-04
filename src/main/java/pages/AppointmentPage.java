@@ -1,5 +1,4 @@
 package pages;
-
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
@@ -25,12 +24,12 @@ public class AppointmentPage extends LoginPage {
     private WebElement goToHomePageButton;
     @FindBy(id = "txt_visit_date")
     private WebElement dateRequired;
+
     public AppointmentPage(WebDriver driver) {
         super(driver);
     }
 
     public void completeTheDetailsForAppointment() throws InterruptedException {
-
         makeAppointmentButton.click();
         username.sendKeys("John Doe");
         password.sendKeys("ThisIsNotAPassword");
@@ -53,7 +52,6 @@ public class AppointmentPage extends LoginPage {
         System.out.println(appointmentConfirmation.getText());
     }
     public void insertingLetersInDateField() throws InterruptedException {
-
         makeAppointmentButton.click();
         username.sendKeys("John Doe");
         password.sendKeys("ThisIsNotAPassword");

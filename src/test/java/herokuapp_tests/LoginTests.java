@@ -1,5 +1,4 @@
 package herokuapp_tests;
-
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.*;

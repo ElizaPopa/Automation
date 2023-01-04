@@ -1,9 +1,9 @@
 package herokuapp_tests;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class AppointmentTests extends BaseTest {
+
     @Test
     public void makeAnAppointmentFunctionality() throws InterruptedException {
         driver.get(urlHerokuApp);

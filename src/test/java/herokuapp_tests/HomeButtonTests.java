@@ -1,5 +1,4 @@
 package herokuapp_tests;
-
 import org.testng.annotations.Test;
 
 public class HomeButtonTests extends BaseTest {

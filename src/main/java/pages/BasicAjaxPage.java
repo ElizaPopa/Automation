@@ -1,27 +1,18 @@
 package pages;
-
-import com.github.dockerjava.api.model.Config;
-import implementation.WebdriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.sql.Time;
 import java.time.Duration;
-import java.util.List;
-import java.util.NoSuchElementException;
-
 
 public class BasicAjaxPage extends LoginPage {
 
     @FindBy(className = ("styled-click-button"))
     private WebElement codeButton;
+
     public BasicAjaxPage(WebDriver driver) {
         super(driver);
     }

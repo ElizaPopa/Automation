@@ -27,7 +27,6 @@ public class BaseTest {
 
     @BeforeMethod
     public void loginSteps() {
-
         driver = WebdriverManager.getChromedriver();
         loginPage = new LoginPage(driver);
         appointmentPage = new AppointmentPage(driver);

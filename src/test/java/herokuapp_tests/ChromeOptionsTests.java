@@ -5,9 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-
 public class ChromeOptionsTests extends BaseTest {
-    String urlBasicAjax = "https://testpages.herokuapp.com/styled/the_form_processor.php?ajax=1";
 
     @Test
     public void mobileTest() {
